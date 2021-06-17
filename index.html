@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./resources/style.css">
+    <title>ZemosoRestaurant</title>
+</head>
+<body>
+    <div class="sidenav">
+        <h2 style="text-align: center; color: #F2AA4CFF;">Tables</h2>
+        <input type="text" id="tablefilter" onkeyup="tableFilter()" placeholder="Search for table..">
+        <ul id="tableList">
+            <li>
+                <div id="table1" ondragover="onDragOver(event)" ondrop="onDrop(event)" ondragleave="onDragLeave(event)">
+                    <h2>Table 1</h2>
+                    <h4>Cost : 0</h4>
+                    <h4>Total Items : 0</h4>
+                    <input id="myBtn" type="button" value="Take Bill" onclick="showModal(this.parentNode)">
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                          <span class="close-btn">&times;</span>
+                        <h2 class="head">Table-1 | Order Details</h2>
+                        <div class="maindiv"></div>
+                        <h4 id="totalCost"></h4>
+                        <button class='btn btn-dark' style='margin: 10px;' onclick="bill(event,this)">Close Session (Generate Bill)</button>
+                          
+                          
+                        </div>
+                      
+                      </div>
+                    <hr>
+                </div>
+            </li>
+            <li>
+                <div id="table2" ondragover="onDragOver(event)" ondrop="onDrop(event)" ondragleave="onDragLeave(event)">
+                    <h2>Table 2</h2>
+                    <h4>Cost : 0</h4>
+                    <h4>Total Items : 0</h4>
+                    <input id="myBtn" type="button" value="Take Bill" onclick="showModal(this.parentNode)">
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                          <span class="close-btn">&times;</span>
+                              <h2 class="head">Table-2 | Order Details</h2>
+                              <div class="maindiv"></div>
+                              <h4 id="totalCost"></h4>
+                              <button class='btn btn-dark' style='margin: 10px;' onclick="bill(event,this)">Close Session (Generate Bill)</button>
+                       </div>
+                      
+                      </div>
+                    <hr>
+                </div>
+            </li>
+            <li>
+                <div id="table3" ondragover="onDragOver(event)" ondrop="onDrop(event)" ondragleave="onDragLeave(event)">
+                    <h2>Table 3</h2>
+                    <h4>Cost : 0</h4>
+                    <h4>Total Items : 0</h4>
+                    <h4></h4>
+                    <input type="button" value="Take Bill" onclick="bill(event)">
+                    <hr>
+                </div>
+            </li>
+        </ul>
+      </div>
+
+      <div class="main">
+        <h2 style="text-align: center; color: #990011FF;">Menu</h2>
+        <input type="text" id="menufilter" onkeyup="menuFilter()" placeholder="Search for dish..">
+        <ul id="menuList">
+            <li>
+                <div id="item1" class="item" draggable="true" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)">
+                    <h1>French Fries</h1>
+                    <h3>80.00</h3>
+                    <span hidden>appetizers</span>
+                </div>
+                <!-- <hr> -->
+            </li>
+            <li>
+                <div id="item2" class="item" draggable="true" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)">
+                    <h1>Maccaroni with Cheese Sauce</h1>
+                    <h3>180.00</h3>
+                    <span hidden>main course</span>
+                </div>
+                <!-- <hr> -->
+            </li>
+            <li>
+                <div id="item3" class="item" draggable="true" ondragstart="onDragStart(event)" ondragend="onDragEnd(event)">
+                    <h1>Chocolate Hazelnut Cheesecake</h1>
+                    <h3>225.00</h3>
+                    <span hidden>desserts</span>
+                </div>
+                <!-- <hr> -->
+            </li>
+        </ul>
+      </div>
+      <script src="./resources/dnd.js"></script>
+      <script src="./resources/filter.js"></script>
+</body>
+</html>
